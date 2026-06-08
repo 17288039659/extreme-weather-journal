@@ -14,7 +14,7 @@ export const Home = () => {
             {/* 期刊封面图 */}
             <div className="w-full aspect-[3/4] rounded-lg mb-4 overflow-hidden shadow-sm">
               <img
-                src="/cover.jpg"
+                src={import.meta.env.BASE_URL + "cover.jpg"}
                 alt={`${journalInfo.name} 封面`}
                 className="w-full h-full object-cover"
               />
