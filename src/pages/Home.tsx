@@ -82,10 +82,11 @@ export const Home = () => {
               {latestArticles.map((article) => (
                 <article
                   key={article.id}
-                  className="bg-white rounded-lg border border-gray-200 p-6 hover:border-primary-300 hover:shadow-sm transition-all"
+                  className="bg-white rounded-lg border border-gray-200 p-6 hover:border-primary-300 hover:shadow-sm transition-all cursor-pointer"
+                  onClick={() => window.location.href = import.meta.env.BASE_URL + 'article/' + article.id}
                 >
                   {/* 文章标题 */}
-                  <h3 className="text-lg font-semibold text-primary-700 leading-relaxed">
+                  <h3 className="text-lg font-semibold text-primary-700 leading-relaxed hover:text-primary-800 transition-colors">
                     {article.title}
                   </h3>
 
@@ -102,28 +103,13 @@ export const Home = () => {
                     {article.abstract}
                   </p>
 
-                  {/* 下载按钮 */}
-                  <div className="mt-4 flex items-center gap-3">
-                    <a
-                      href={import.meta.env.BASE_URL + "JEW-彩虹论文.pdf"}
-                      target="_blank"
-                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm rounded-lg hover:bg-primary-700 transition-colors"
-                    >
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                      </svg>
-                      下载 PDF
-                    </a>
-                    <a
-                      href={import.meta.env.BASE_URL + "JEW-彩虹论文.docx"}
-                      download
-                      className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 text-sm rounded-lg hover:bg-gray-50 transition-colors"
-                    >
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                      下载 DOCX
-                    </a>
+                  {/* 查看详情提示 */}
+                  <div className="mt-4 flex items-center gap-2 text-sm text-primary-600 font-medium">
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    阅读全文
                   </div>
 
                   {/* 底部信息 */}
