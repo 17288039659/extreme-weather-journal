@@ -139,7 +139,6 @@ export const Home = () => {
                 </article>
               ))}
             </div>
-            </div>
           ) : (
             /* 空状态 */
             <div className="bg-white rounded-lg border border-gray-200 p-12 text-center">
