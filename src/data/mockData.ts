@@ -44,8 +44,24 @@ export const journalInfo = {
   address: '第十三期大气物理研究所',
 };
 
-// 最新文章 - 后续由用户提供
-export const latestArticles: Article[] = [];
+// 最新文章
+export const latestArticles: Article[] = [
+  {
+    id: 'mujigae-2015',
+    title: '登陆台风"彩虹"（2015）近岸海洋响应及其对快速增强海洋下垫面条件的指示',
+    titleEn: 'Near-shore Ocean Response to Landfalling Typhoon Mujigae (2015) and Its Indications for Ocean Substrate Conditions of Rapid Intensification',
+    authors: ['利洪煜', '小脐橙'],
+    affiliations: ['中国十三期大气海洋响应研究所'],
+    abstract: '热带气旋（TC）强度预报中的海气相互作用过程长期存在不确定性。台风"彩虹"（2015）在南海北部登陆前经历快速增强（RI）。本研究利用CMA-STI最佳路径数据、ERA5逐小时10 m风场、MUR高分辨率海表温度（SST）和GLORYS12海洋再分析数据，诊断登陆前近岸海洋响应的本质。结果表明，持续的下涌有利沿岸风、显著的Ekman输送、近岸SST维持和次表层等温线加深共同构成了诊断信号。综合证据表明，近岸下涌型响应阻止了SST经历显著降温，为"彩虹"登陆前强度维持提供了边际有利的海洋下垫面条件。',
+    keywords: ['台风彩虹', '沿海下涌', '海表温度维持', '快速增强', '南海北部'],
+    doi: '10.XXXXXX/jew.2026.0001',
+    publishDate: '2026-06-01',
+    volume: 12,
+    issue: 3,
+    pages: '1-25',
+    category: '研究论文',
+  },
+];
 
 // 编委会成员
 export const editorialBoard: EditorialBoard[] = [
