@@ -72,7 +72,7 @@ export const Home = () => {
           <div className="mb-6">
             <h2 className="text-2xl font-bold text-gray-900">最新文章</h2>
             <p className="text-sm text-gray-500 mt-1">
-              暂无已发表文章
+              Vol. {journalInfo.foundedYear}, No. 1
             </p>
           </div>
 
@@ -85,12 +85,9 @@ export const Home = () => {
                   className="bg-white rounded-lg border border-gray-200 p-6 hover:border-primary-300 hover:shadow-sm transition-all"
                 >
                   {/* 文章标题 */}
-                  <Link
-                    to={`/article/${article.id}`}
-                    className="text-lg font-semibold text-primary-700 hover:text-primary-800 transition-colors leading-relaxed block"
-                  >
+                  <h3 className="text-lg font-semibold text-primary-700 leading-relaxed">
                     {article.title}
-                  </Link>
+                  </h3>
 
                   {/* 英文标题 */}
                   <p className="text-sm text-gray-500 mt-1 italic">{article.titleEn}</p>
@@ -101,12 +98,36 @@ export const Home = () => {
                   </div>
 
                   {/* 摘要预览 */}
-                  <p className="mt-3 text-sm text-gray-500 leading-relaxed line-clamp-2">
+                  <p className="mt-3 text-sm text-gray-500 leading-relaxed line-clamp-3">
                     {article.abstract}
                   </p>
 
+                  {/* 下载按钮 */}
+                  <div className="mt-4 flex items-center gap-3">
+                    <a
+                      href={import.meta.env.BASE_URL + "JEW-彩虹论文.pdf"}
+                      target="_blank"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-primary-600 text-white text-sm rounded-lg hover:bg-primary-700 transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      下载 PDF
+                    </a>
+                    <a
+                      href={import.meta.env.BASE_URL + "JEW-彩虹论文.docx"}
+                      download
+                      className="inline-flex items-center gap-2 px-4 py-2 border border-gray-300 text-gray-700 text-sm rounded-lg hover:bg-gray-50 transition-colors"
+                    >
+                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                      </svg>
+                      下载 DOCX
+                    </a>
+                  </div>
+
                   {/* 底部信息 */}
-                  <div className="mt-4 flex items-center justify-between text-xs text-gray-400">
+                  <div className="mt-3 flex items-center justify-between text-xs text-gray-400">
                     <div className="flex items-center gap-4">
                       <span className="inline-flex items-center px-2 py-1 bg-primary-50 text-primary-700 rounded">
                         {article.category}
@@ -117,6 +138,7 @@ export const Home = () => {
                   </div>
                 </article>
               ))}
+            </div>
             </div>
           ) : (
             /* 空状态 */
